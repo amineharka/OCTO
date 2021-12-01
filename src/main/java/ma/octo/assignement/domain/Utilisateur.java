@@ -1,15 +1,19 @@
 package ma.octo.assignement.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "UTILISATEUR")
+@Getter @Setter
 public class Utilisateur implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,51 +35,6 @@ public class Utilisateur implements Serializable {
   private Date birthdate;
 
 
-  public String getGender() {
-    return gender;
-  }
 
-  public void setGender(String gender) {
-    this.gender = gender;
-  }
 
-  public String getLastname() {
-    return lastname;
-  }
-
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
-  }
-
-  public String getFirstname() {
-    return firstname;
-  }
-
-  public void setFirstname(String firstname) {
-    this.firstname = firstname;
-  }
-
-  public Date getBirthdate() {
-    return birthdate;
-  }
-
-  public void setBirthdate(Date birthdate) {
-    this.birthdate = birthdate;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
 }

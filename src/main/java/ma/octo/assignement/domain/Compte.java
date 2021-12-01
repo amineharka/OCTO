@@ -1,10 +1,14 @@
 package ma.octo.assignement.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "COMPTE")
+@Getter @Setter
 public class Compte {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,43 +26,7 @@ public class Compte {
   @JoinColumn(name = "utilisateur_id")
   private Utilisateur utilisateur;
 
-  public String getNrCompte() {
-    return nrCompte;
-  }
 
-  public void setNrCompte(String nrCompte) {
-    this.nrCompte = nrCompte;
-  }
 
-  public String getRib() {
-    return rib;
-  }
 
-  public void setRib(String rib) {
-    this.rib = rib;
-  }
-
-  public BigDecimal getSolde() {
-    return solde;
-  }
-
-  public void setSolde(BigDecimal solde) {
-    this.solde = solde;
-  }
-
-  public Utilisateur getUtilisateur() {
-    return utilisateur;
-  }
-
-  public void setUtilisateur(Utilisateur utilisateur) {
-    this.utilisateur = utilisateur;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
 }
